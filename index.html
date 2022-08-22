@@ -81,9 +81,18 @@
             <h2 class="titulo">Calculador de Prestamos</h2>
             <div id="content">
                 <input id="inputMonto" type="text" name="monto" placeholder="Monto">
-                <input id="inputCuota" type="text" name="cuota" placeholder="Cantidad de cuotas">
+                <select name="cuota" id="inputCuota" required>
+                    <option selected>Seleccione las Cuotas</option>
+                    <option>6</option>
+                    <option>12</option>
+                    <option>18</option>
+                    <option>24</option>
+                    <option>36</option>
+                    <option>48</option>
+                </select>
                 <select name="entidad" id="inputBanco" required>
-                    <option selected>Banco Macro</option>
+                    <option selected>Seleccione el Banco</option>
+                    <option>Banco Macro</option>
                     <option>Banco Citibank</option>
                     <option>Banco Santander</option>
                 </select>

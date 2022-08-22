@@ -152,9 +152,6 @@ function calcular (){
 
     document.getElementById("contentCuotas").innerHTML = cuotas
     document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
-
-
-    alert(cuotas.split('-'))
 };
 
 /* let monto = prompt("Ingrese el monto em $");
