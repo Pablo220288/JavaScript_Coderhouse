@@ -79,6 +79,43 @@ for(let i=1; i<=numero; i++){
 }
 alert(`El FACTORIAL de ${numero} es: ${total}`) */
 
+/* let monto = prompt("Ingrese el monto em $");
+
+let cantCuotas = prompt("Cantidad de cuotas");
+
+while( parseInt(cantCuotas) > 48){
+    alert("La cantidad de cuotas supera el limite.");
+    cantCuotas = prompt("Cantidad de cuotas - Maximo 48 Cuotas");
+};
+
+let interes = ""
+
+if(parseInt(cantCuotas) > 10){
+    if(parseInt(cantCuotas) > 20){
+        if(parseInt(cantCuotas) > 30){
+            if(parseInt(cantCuotas) > 40){
+                interes = monto * (40/100);
+            };
+        }else{
+            interes = monto * (30/100);
+        };
+    }else{
+        interes = monto * (20/100);
+    };
+}else{
+    interes = monto * (10/100);
+};
+
+let cuotas = "";
+
+for(let i = 1; i <= cantCuotas; i++){
+    cuotas += `Couta ${i}: $${((parseInt(monto) + interes) / cantCuotas).toFixed(2)} \n`;
+};
+alert(cuotas + "\n" + `Monto total: $${parseInt(monto)+interes}`); */
+
+
+
+
 window.onload = iniciar;
 
 function iniciar(){
@@ -153,37 +190,3 @@ function calcular (){
     document.getElementById("contentCuotas").innerHTML = cuotas
     document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
 };
-
-/* let monto = prompt("Ingrese el monto em $");
-
-let cantCuotas = prompt("Cantidad de cuotas");
-
-while( parseInt(cantCuotas) > 48){
-    alert("La cantidad de cuotas supera el limite.");
-    cantCuotas = prompt("Cantidad de cuotas - Maximo 48 Cuotas");
-};
-
-let interes = ""
-
-if(parseInt(cantCuotas) > 10){
-    if(parseInt(cantCuotas) > 20){
-        if(parseInt(cantCuotas) > 30){
-            if(parseInt(cantCuotas) > 40){
-                interes = monto * (40/100);
-            };
-        }else{
-            interes = monto * (30/100);
-        };
-    }else{
-        interes = monto * (20/100);
-    };
-}else{
-    interes = monto * (10/100);
-};
-
-let cuotas = "";
-
-for(let i = 1; i <= cantCuotas; i++){
-    cuotas += `Couta ${i}: $${((parseInt(monto) + interes) / cantCuotas).toFixed(2)} \n`;
-};
-alert(cuotas + "\n" + `Monto total: $${parseInt(monto)+interes}`); */

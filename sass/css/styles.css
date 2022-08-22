@@ -5,59 +5,74 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   width: 100%;
   height: 100vh;
   background: linear-gradient(70deg, #fc037b, #d83ffa);
-  overflow: hidden;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
 }
-body .contenPrestamo {
+body header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .contenPrestamo {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
-body .contenPrestamo .bancos, body .contenPrestamo .cantCoutas, body .contenPrestamo .calculador {
+body main .contenPrestamo .bancos, body main .contenPrestamo .cantCoutas, body main .contenPrestamo .calculador {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  width: 300px;
+  width: 350px;
   height: 400px;
   background-color: rgba(255, 255, 255, 0.5215686275);
   padding: 20px 10px;
   border-radius: 10px;
 }
-body .contenPrestamo .bancos .titulo, body .contenPrestamo .cantCoutas .titulo, body .contenPrestamo .calculador .titulo {
+body main .contenPrestamo .bancos .titulo, body main .contenPrestamo .cantCoutas .titulo, body main .contenPrestamo .calculador .titulo {
   font-size: 1.5rem;
 }
-body .contenPrestamo .bancos .macro, body .contenPrestamo .cantCoutas .macro, body .contenPrestamo .calculador .macro, body .contenPrestamo .bancos .citi, body .contenPrestamo .cantCoutas .citi, body .contenPrestamo .calculador .citi, body .contenPrestamo .bancos .santander, body .contenPrestamo .cantCoutas .santander, body .contenPrestamo .calculador .santander {
+body main .contenPrestamo .bancos .macro, body main .contenPrestamo .cantCoutas .macro, body main .contenPrestamo .calculador .macro, body main .contenPrestamo .bancos .citi, body main .contenPrestamo .cantCoutas .citi, body main .contenPrestamo .calculador .citi, body main .contenPrestamo .bancos .santander, body main .contenPrestamo .cantCoutas .santander, body main .contenPrestamo .calculador .santander {
   position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
 }
-body .contenPrestamo .bancos .macro img, body .contenPrestamo .cantCoutas .macro img, body .contenPrestamo .calculador .macro img, body .contenPrestamo .bancos .citi img, body .contenPrestamo .cantCoutas .citi img, body .contenPrestamo .calculador .citi img, body .contenPrestamo .bancos .santander img, body .contenPrestamo .cantCoutas .santander img, body .contenPrestamo .calculador .santander img {
+body main .contenPrestamo .bancos .macro img, body main .contenPrestamo .cantCoutas .macro img, body main .contenPrestamo .calculador .macro img, body main .contenPrestamo .bancos .citi img, body main .contenPrestamo .cantCoutas .citi img, body main .contenPrestamo .calculador .citi img, body main .contenPrestamo .bancos .santander img, body main .contenPrestamo .cantCoutas .santander img, body main .contenPrestamo .calculador .santander img {
   width: 100px;
 }
-body .contenPrestamo .bancos .macro p, body .contenPrestamo .cantCoutas .macro p, body .contenPrestamo .calculador .macro p, body .contenPrestamo .bancos .citi p, body .contenPrestamo .cantCoutas .citi p, body .contenPrestamo .calculador .citi p, body .contenPrestamo .bancos .santander p, body .contenPrestamo .cantCoutas .santander p, body .contenPrestamo .calculador .santander p {
+body main .contenPrestamo .bancos .macro p, body main .contenPrestamo .cantCoutas .macro p, body main .contenPrestamo .calculador .macro p, body main .contenPrestamo .bancos .citi p, body main .contenPrestamo .cantCoutas .citi p, body main .contenPrestamo .calculador .citi p, body main .contenPrestamo .bancos .santander p, body main .contenPrestamo .cantCoutas .santander p, body main .contenPrestamo .calculador .santander p {
   font-size: 0.7rem;
 }
-body .contenPrestamo .bancos .macro .cuotas, body .contenPrestamo .cantCoutas .macro .cuotas, body .contenPrestamo .calculador .macro .cuotas, body .contenPrestamo .bancos .citi .cuotas, body .contenPrestamo .cantCoutas .citi .cuotas, body .contenPrestamo .calculador .citi .cuotas, body .contenPrestamo .bancos .santander .cuotas, body .contenPrestamo .cantCoutas .santander .cuotas, body .contenPrestamo .calculador .santander .cuotas {
+body main .contenPrestamo .bancos .macro .cuotas, body main .contenPrestamo .cantCoutas .macro .cuotas, body main .contenPrestamo .calculador .macro .cuotas, body main .contenPrestamo .bancos .citi .cuotas, body main .contenPrestamo .cantCoutas .citi .cuotas, body main .contenPrestamo .calculador .citi .cuotas, body main .contenPrestamo .bancos .santander .cuotas, body main .contenPrestamo .cantCoutas .santander .cuotas, body main .contenPrestamo .calculador .santander .cuotas {
   text-align: center;
 }
-body .contenPrestamo .calculador .titulo {
+body main .contenPrestamo .calculador .titulo {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
-body .contenPrestamo .calculador #content {
+body main .contenPrestamo .calculador #content {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -69,7 +84,7 @@ body .contenPrestamo .calculador #content {
   color: #000000;
   font-size: 20px;
 }
-body .contenPrestamo .calculador #content input, body .contenPrestamo .calculador #content select {
+body main .contenPrestamo .calculador #content input, body main .contenPrestamo .calculador #content select {
   width: 90%;
   height: 30px;
   font-style: italic;
@@ -78,8 +93,12 @@ body .contenPrestamo .calculador #content input, body .contenPrestamo .calculado
   border: none;
   background-color: transparent;
   border-bottom: 1px solid black;
+  position: relative;
 }
-body .contenPrestamo .calculador .butoon {
+body main .contenPrestamo .calculador #content select label {
+  position: absolute;
+}
+body main .contenPrestamo .calculador .butoon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,18 +112,19 @@ body .contenPrestamo .calculador .butoon {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   transition: all 500ms ease;
 }
-body .contenPrestamo .calculador .butoon:hover {
+body main .contenPrestamo .calculador .butoon:hover {
   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3019607843);
 }
-body .contenPrestamo .cantCoutas {
+body main .contenPrestamo .cantCoutas {
+  width: 350px;
   gap: 5px;
   justify-content: space-between;
 }
-body .contenPrestamo .cantCoutas .titulo {
+body main .contenPrestamo .cantCoutas .titulo {
   text-align: center;
   font-size: 1.5rem;
 }
-body .contenPrestamo .cantCoutas #contentCuotas {
+body main .contenPrestamo .cantCoutas #contentCuotas {
   width: 100%;
   height: 250px;
   background-color: rgba(255, 255, 255, 0.5058823529);
@@ -116,10 +136,10 @@ body .contenPrestamo .cantCoutas #contentCuotas {
   font-size: 0.7rem;
   padding: 10px;
 }
-body .contenPrestamo .cantCoutas #contentCuotas p {
+body main .contenPrestamo .cantCoutas #contentCuotas p {
   margin-left: 2px;
 }
-body .contenPrestamo .cantCoutas #montoTotal {
+body main .contenPrestamo .cantCoutas #montoTotal {
   width: 100%;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.5058823529);
@@ -128,6 +148,28 @@ body .contenPrestamo .cantCoutas #montoTotal {
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+}
+body footer {
+  position: absolute;
+  width: 300px;
+  text-align: center;
+  bottom: 7px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+body footer .copyright {
+  font-size: 10px;
+  font-weight: 600;
+  color: black;
+}
+
+@media only screen and (max-width: 1080px) {
+  body {
+    height: auto;
+  }
+  body main {
+    margin-bottom: 50px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
