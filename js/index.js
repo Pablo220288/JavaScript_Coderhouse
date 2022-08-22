@@ -1,4 +1,4 @@
-/*Solicitud de Contraseña*/
+/* //Solicitud de Contraseña
 
 let contra = prompt("👮 Ingresa la Contraseña."+"\n"+" Sugerencia: Hija mayor de Homero Simpson (minusculas)");
 
@@ -26,7 +26,7 @@ while(contra != "lisa"){
 //si ingresa la contraseña correcta
 alert("👏 Contraseña Correcta. Empezemos la Encuesta");
 
-/*Encuesta*/
+//Encuesta
 
 //constante
 const TIEMPO = 1;
@@ -65,7 +65,7 @@ let cuarto = prompt("🏠 Ordenaste tu cuarto.? Responde con SI o NO");
         }
     }else{
         document.getElementById("content").innerHTML = "😭 No puedes salir a jugar. Primero has la Tarea y Ordena tu cuarto."
-    };
+    }; */
 
 
 // Te dejo otro ejemplo de ciclo For para averiguar el factorial de un Numero.
@@ -78,3 +78,115 @@ for(let i=1; i<=numero; i++){
      console.log(`${total}`);
 }
 alert(`El FACTORIAL de ${numero} es: ${total}`) */
+
+window.onload = iniciar;
+
+function iniciar(){
+    let butoon = document.getElementById("butoon");
+    butoon.addEventListener("click", calcular)
+}
+
+function calcular (){
+    let inputMonto = document.getElementById("inputMonto");
+    let monto = inputMonto.value;
+
+    let inputCuota = document.getElementById("inputCuota");
+    let cuota = inputCuota.value;
+
+    let inputBanco = document.getElementById("inputBanco");
+    let banco = inputBanco.value;
+
+    let interes = ""
+
+    if(banco != "Banco Macro"){
+        if(banco != "Banco Citibank"){
+            if(parseInt(cuota) > 12){
+                if(parseInt(cuota) > 24){
+                    if(parseInt(cuota) > 36){
+                        interes = monto * (47/100);
+                    }else{
+                        interes = monto * (36/100);
+                    }
+                }else{
+                    interes = monto * (25/100);
+                }
+            }else{
+                interes = monto * (14/100);
+            }
+        }else{
+            if(parseInt(cuota) > 12){
+                if(parseInt(cuota) > 24){
+                    if(parseInt(cuota) > 36){
+                        interes = monto * (42/100);
+                    }else{
+                        interes = monto * (32/100);
+                    }
+                }else{
+                    interes = monto * (22/100);
+                }
+            }else{
+                interes = monto * (12/100);
+            }
+        }
+    }else{
+        if(parseInt(cuota) > 12){
+            if(parseInt(cuota) > 24){
+                if(parseInt(cuota) > 36){
+                    interes = monto * (40/100);
+                }else{
+                    interes = monto * (30/100);
+                }
+            }else{
+                interes = monto * (20/100);
+            }
+        }else{
+            interes = monto * (10/100);
+        }
+    }
+
+    let cuotas = "";
+
+    for(let i = 1; i <= cuota; i++){
+        cuotas += `<p> ${i}: $${((parseInt(monto) + interes) / cuota).toFixed(2)}</p>`;
+    };
+
+    document.getElementById("contentCuotas").innerHTML = cuotas
+    document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
+
+
+    alert(cuotas.split('-'))
+};
+
+/* let monto = prompt("Ingrese el monto em $");
+
+let cantCuotas = prompt("Cantidad de cuotas");
+
+while( parseInt(cantCuotas) > 48){
+    alert("La cantidad de cuotas supera el limite.");
+    cantCuotas = prompt("Cantidad de cuotas - Maximo 48 Cuotas");
+};
+
+let interes = ""
+
+if(parseInt(cantCuotas) > 10){
+    if(parseInt(cantCuotas) > 20){
+        if(parseInt(cantCuotas) > 30){
+            if(parseInt(cantCuotas) > 40){
+                interes = monto * (40/100);
+            };
+        }else{
+            interes = monto * (30/100);
+        };
+    }else{
+        interes = monto * (20/100);
+    };
+}else{
+    interes = monto * (10/100);
+};
+
+let cuotas = "";
+
+for(let i = 1; i <= cantCuotas; i++){
+    cuotas += `Couta ${i}: $${((parseInt(monto) + interes) / cantCuotas).toFixed(2)} \n`;
+};
+alert(cuotas + "\n" + `Monto total: $${parseInt(monto)+interes}`); */

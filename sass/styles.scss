@@ -5,6 +5,11 @@ $purple: #d83ffa;
 $black: #000000;
 $white: #ffffff;
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body{
     width: 100%;
@@ -13,53 +18,125 @@ body{
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
-    gap: 30px;
     font-family: "Poppins", sans-serif;
-    #content{
+    .contenPrestamo{
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        width:80%;
-        height: 60px;
-        background-color: #ffffffc0;
-        border-radius: 50px;
-        color: $black;
-        font-size: 20px;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-        transition: all 500ms ease;
-        position: relative;
-        z-index: 2;
-        overflow: hidden;
-        &:hover{
-            background-color: $white;
+        gap: 10px;
+        .bancos{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            width: 300px;
+            height: 400px;
+            background-color: #ffffff85;
+            padding: 20px 10px;
+            border-radius: 10px;
+            .titulo{
+                font-size: 1.5rem;
+            }
+            .macro, .citi, .santander{
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                img{
+                    width: 100px;
+                }
+                p{
+                    font-size: 0.7rem;
+                }
+                .cuotas{
+                    text-align: center;
+                }
+            }
         }
-    }
-    .butoon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 40px;
-        background: linear-gradient(70deg, $purple,$pink);
-        text-decoration: none;
-        border-radius: 50px;
-        color: $black;
-        font-size: 15px;
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-        transition: all 500ms ease;
-        &:hover{
-            box-shadow: 0 0 20px 0 #ffffff4d;
-        }  
-    }
-}
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
+        .calculador{
+            @extend .bancos;
+            .titulo{
+                text-align: center;
+                font-size: 2rem;
+            }
+            #content{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                padding: 10px;
+                width:90%;
+                background-color: transparent;
+                color: $black;
+                font-size: 20px;
+                input, select{
+                    width: 90%;
+                    height: 30px;
+                    font-style: italic;
+                    outline: none;
+                    padding-left: 10px;
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 1px solid black;
+                }
+            }
+            .butoon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 40px;
+                background: linear-gradient(70deg, $purple,$pink);
+                text-decoration: none;
+                border-radius: 50px;
+                color: $black;
+                font-size: 15px;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+                transition: all 500ms ease;
+                &:hover{
+                    box-shadow: 0 0 20px 0 #ffffff4d;
+                }  
+            }
+        }
+        .cantCoutas{
+            @extend .bancos;
+            gap: 5px;
+            justify-content: space-between;
+            .titulo{
+                text-align: center;
+                font-size: 1.5rem;
+            }
+            #contentCuotas{
+                width: 100%;
+                height: 250px;
+                background-color: #ffffff81;
+                border-radius: 10px;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: start;
+                align-items: center;
+                font-size: 0.7rem;
+                padding: 10px;
+                p{
+                    margin-left: 2px;
+                }
+
+            }
+            #montoTotal{
+                width: 100%;
+                height: 50px;
+                background-color: #ffffff81;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3rem;
+            }
+        } 
     }
 }
