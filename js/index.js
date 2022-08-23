@@ -1,6 +1,6 @@
 // Aca va el codigo con funciones flecha y normales que interactuan con el html
 
-window.onload = iniciar;
+/* window.onload = iniciar;
 
 const suma = (a,b) => a + b;
 const division = (a,b) => a / b;
@@ -72,12 +72,15 @@ function calcular (){
 
     document.getElementById("contentCuotas").innerHTML = cuotas
     document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
-};
+}; */
 
 
 // Este de abajo seria un ejemplo de uso de las funciones fecha pero sin interaccion con el HTML
     
-/*     let monto = parseInt(prompt("Monto"));
+    const suma = (a,b) => a + b;
+    const division = (a,b) => a / b;
+
+    let monto = parseInt(prompt("Monto"));
     let cuotas = parseInt(prompt("Cuota"));
     let banco = parseInt(prompt("🏦 Ingresa la Entidad Bancaria."+"\n"+"1. Banco Macro - 10% Interes"+"\n"+"2 Banco Citibank - 20% Interes"+"\n"+"3 Banco Santander - 30% Interes"));
         
@@ -91,6 +94,13 @@ function calcular (){
         banco = (10/100)
     }
 
-    let valorCuota = division(suma(monto, monto * banco),cuotas).toFixed(2) ;
-    
-    alert(`${cuotas} Cuotas de $: ${valorCuota}`); */
+    let valorCuota = "";
+
+    for(let i = 1; i <= cuotas; i++){
+        valorCuota += `${i}: $${division(suma(parseInt(monto), monto * banco),cuotas).toFixed(2)} \n`;
+    };
+
+    let montoTotal = suma(parseInt(monto),monto * banco)
+
+  
+    alert(`Cuotas:\n\n${valorCuota}\nTotal Prestamo $: ${montoTotal}`);
