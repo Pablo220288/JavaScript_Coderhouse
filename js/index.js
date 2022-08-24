@@ -1,6 +1,6 @@
 // Aca va el codigo con funciones flecha y normales que interactuan con el html
 
-/* window.onload = iniciar;
+window.onload = iniciar;
 
 const suma = (a,b) => a + b;
 const division = (a,b) => a / b;
@@ -72,12 +72,12 @@ function calcular (){
 
     document.getElementById("contentCuotas").innerHTML = cuotas
     document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
-}; */
+};
 
 
 // Este de abajo seria un ejemplo de uso de las funciones fecha pero sin interaccion con el HTML
     
-    const suma = (a,b) => a + b;
+/*     const suma = (a,b) => a + b;
     const division = (a,b) => a / b;
 
     let monto = parseInt(prompt("Monto"));
@@ -103,4 +103,4 @@ function calcular (){
     let montoTotal = suma(parseInt(monto),monto * banco)
 
   
-    alert(`Cuotas:\n\n${valorCuota}\nTotal Prestamo $: ${montoTotal}`);
+    alert(`Cuotas:\n\n${valorCuota}\nTotal Prestamo $: ${montoTotal}`); */
