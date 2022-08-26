@@ -1,6 +1,6 @@
 // Aca va el codigo con funciones flecha y normales que interactuan con el html
 
-window.onload = iniciar;
+/* window.onload = iniciar;
 
 const suma = (a,b) => a + b;
 const division = (a,b) => a / b;
@@ -72,7 +72,7 @@ function calcular (){
 
     document.getElementById("contentCuotas").innerHTML = cuotas
     document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
-};
+}; */
 
 
 // Este de abajo seria un ejemplo de uso de las funciones fecha pero sin interaccion con el HTML
@@ -104,3 +104,74 @@ function calcular (){
 
   
     alert(`Cuotas:\n\n${valorCuota}\nTotal Prestamo $: ${montoTotal}`); */
+
+/* class Prestamo{
+    constructor(nombre, monto, cuota){
+      this.nombre = nombre;
+      this.monto = monto;
+      this.cuota = cuota;
+    }
+    pagrarCuota(){
+      this.cuota = this.cuota - 1;
+    }
+  };
+  
+  let prestamo1 = new Prestamo(
+    prompt("Ingresa el Motivo de Tu Prestamos"), 
+    parseInt(prompt("Ingresa el monto")), 
+    parseInt(prompt("Cantidad de cuotas"))
+    );
+
+  console.log(prestamo1);
+  alert(`Se creo el Prestamo: ${prestamo1.nombre}\nPor un monto de $${prestamo1.monto}\na pagar en ${prestamo1.cuota} cuotas`);
+
+  let pagar = confirm("Quiere Realizar el pago de una cuota.?");
+  if(pagar === true){
+    prestamo1.pagrarCuota();
+    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
+  }else{
+    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
+  }; */
+
+
+const sumaPrecio  = (a,b,c) => a + b + c;
+const restaDescuento = (a,b) => a - b;
+
+
+let producto1 = parseInt(prompt("Ingrese el precio del producto"));
+let producto2 = parseInt(prompt("Ingrese el precio del producto"));
+let producto3 = parseInt(prompt("Ingrese el precio del producto"));
+
+let totalParcial = sumaPrecio(producto1, producto2, producto3)
+
+let macro = 0.2
+let santander = 0.1
+
+let descuento = ""
+
+let pago = parseInt(prompt("Como que Tarjeta va abonar:"+"\n"+"1 - Macro - DTO:20%"+"\n"+"2 - Santander DTO:10%"))
+
+if(pago != 1){
+    if(pago != 2){
+        alert("Ingrese un numero valido")
+        pago = parseInt(prompt("Como que Tarjeta va abonar:"+"\n"+"1 - Macro - DTO:20%"+"\n"+"2 - Santander DTO:10%"))
+    }else{
+        descuento = totalParcial * santander
+    }
+}else{
+    descuento = totalParcial * macro
+}
+
+let total = restaDescuento(totalParcial, descuento);
+
+let cuota = parseInt(prompt(`Su monto a pagar es de: $${total}\nEn cuantas cuotas lo va a pagar.?`))
+
+alert(`Va a pagar ${cuota} cuotas de: ${total / cuota}`)
+
+let valorCuota = "";
+
+for(let i = 1; i <= cuota; i++){
+    valorCuota += `${i}: $${total / cuota.toFixed(2)} \n`;
+};
+
+alert(`Cuotas:\n\n${valorCuota}\nTotal $: ${total}`);
