@@ -38,35 +38,61 @@ body main .contenPrestamo {
   flex-wrap: wrap;
   gap: 10px;
 }
-body main .contenPrestamo .bancos, body main .contenPrestamo .cantCoutas, body main .contenPrestamo .calculador {
+body main .contenPrestamo .user, body main .contenPrestamo .cantCoutas, body main .contenPrestamo .calculador {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   width: 350px;
   height: 400px;
   background-color: rgba(255, 255, 255, 0.5215686275);
   padding: 20px 10px;
   border-radius: 10px;
 }
-body main .contenPrestamo .bancos .titulo, body main .contenPrestamo .cantCoutas .titulo, body main .contenPrestamo .calculador .titulo {
+body main .contenPrestamo .user .titulo, body main .contenPrestamo .cantCoutas .titulo, body main .contenPrestamo .calculador .titulo {
   font-size: 1.5rem;
 }
-body main .contenPrestamo .bancos .macro, body main .contenPrestamo .cantCoutas .macro, body main .contenPrestamo .calculador .macro, body main .contenPrestamo .bancos .citi, body main .contenPrestamo .cantCoutas .citi, body main .contenPrestamo .calculador .citi, body main .contenPrestamo .bancos .santander, body main .contenPrestamo .cantCoutas .santander, body main .contenPrestamo .calculador .santander {
-  position: relative;
+body main .contenPrestamo .user .usuarios, body main .contenPrestamo .cantCoutas .usuarios, body main .contenPrestamo .calculador .usuarios {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
 }
-body main .contenPrestamo .bancos .macro img, body main .contenPrestamo .cantCoutas .macro img, body main .contenPrestamo .calculador .macro img, body main .contenPrestamo .bancos .citi img, body main .contenPrestamo .cantCoutas .citi img, body main .contenPrestamo .calculador .citi img, body main .contenPrestamo .bancos .santander img, body main .contenPrestamo .cantCoutas .santander img, body main .contenPrestamo .calculador .santander img {
-  width: 100px;
+body main .contenPrestamo .user .usuarios > p, body main .contenPrestamo .cantCoutas .usuarios > p, body main .contenPrestamo .calculador .usuarios > p {
+  align-self: start;
+  text-decoration: underline;
 }
-body main .contenPrestamo .bancos .macro p, body main .contenPrestamo .cantCoutas .macro p, body main .contenPrestamo .calculador .macro p, body main .contenPrestamo .bancos .citi p, body main .contenPrestamo .cantCoutas .citi p, body main .contenPrestamo .calculador .citi p, body main .contenPrestamo .bancos .santander p, body main .contenPrestamo .cantCoutas .santander p, body main .contenPrestamo .calculador .santander p {
-  font-size: 0.7rem;
+body main .contenPrestamo .user .usuarios .contenUsuario, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario, body main .contenPrestamo .calculador .usuarios .contenUsuario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-body main .contenPrestamo .bancos .macro .cuotas, body main .contenPrestamo .cantCoutas .macro .cuotas, body main .contenPrestamo .calculador .macro .cuotas, body main .contenPrestamo .bancos .citi .cuotas, body main .contenPrestamo .cantCoutas .citi .cuotas, body main .contenPrestamo .calculador .citi .cuotas, body main .contenPrestamo .bancos .santander .cuotas, body main .contenPrestamo .cantCoutas .santander .cuotas, body main .contenPrestamo .calculador .santander .cuotas {
-  text-align: center;
+body main .contenPrestamo .user .usuarios .contenUsuario .imagen, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen {
+  width: 50px;
+  height: 50px;
+}
+body main .contenPrestamo .user .usuarios .contenUsuario .imagen img, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen img, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen img {
+  width: 100%;
+}
+body main .contenPrestamo .user .usuarios .contenUsuario .caracteristicas, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .caracteristicas, body main .contenPrestamo .calculador .usuarios .contenUsuario .caracteristicas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: 10px;
+}
+body main .contenPrestamo .user .usuarios .contenUsuario .caracteristicas p, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .caracteristicas p, body main .contenPrestamo .calculador .usuarios .contenUsuario .caracteristicas p {
+  font-size: 0.8rem;
+}
+body main .contenPrestamo .user .usuarios .contenUsuario .resultados, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .resultados, body main .contenPrestamo .calculador .usuarios .contenUsuario .resultados {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+}
+body main .contenPrestamo .user .usuarios .contenUsuario .resultados div, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .resultados div, body main .contenPrestamo .calculador .usuarios .contenUsuario .resultados div {
+  font-size: 0.8rem;
 }
 body main .contenPrestamo .calculador .titulo {
   text-align: center;
