@@ -11,7 +11,7 @@ function iniciar(){
 
 function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1);
-  }
+}
 
 function clearcontent(id) {
     document.getElementById(id).innerHTML = "";
@@ -48,7 +48,6 @@ function ingresoUsuarios(){
 
         let genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero:\nM - Masculino\nF - Femenino`)
 
-
         while((genero.toLowerCase() != "m") && (genero.toLowerCase() != "f")){
             alert(`No se ingreso correctamente el Genero del Usuario`)
             genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero (M o F):\nM - Masculino\nF - Femenino`)
@@ -62,7 +61,7 @@ function ingresoUsuarios(){
             parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Cuotas Limite:`))
         ));
 
-        if(genero.toLowerCase() === "m" ){
+        if(usuarios[usuarios.length - 1].sexo === "m" ){
             document.getElementById(`imagen${usuarios.length}`).appendChild(varon)
         }else{
             document.getElementById(`imagen${usuarios.length}`).appendChild(mujer)
@@ -132,9 +131,9 @@ function elimiarUsuarios(){
             }
 
             let varon = document.createElement('img')
-            varon.src = '../../assets/hombre.png'
+            varon.src = 'assets/hombre.png'
             let mujer = document.createElement('img')
-            mujer.src = '../../assets/mujer.png'
+            mujer.src = 'assets/mujer.png'
 
             for(let g = 1 ; g <= usuarios.length; g++){
                 if(usuarios[g - 1].sexo === "m"){
