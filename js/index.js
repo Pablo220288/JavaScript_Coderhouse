@@ -1,106 +1,163 @@
-// Aca va el codigo con funciones flecha y normales que interactuan con el html
+// A
 
-/* window.onload = iniciar;
-
-const suma = (a,b) => a + b;
-const division = (a,b) => a / b;
+window.onload = iniciar;
 
 function iniciar(){
-    let butoon = document.getElementById("butoon");
-    butoon.addEventListener("click", calcular)
+    let butoon = document.getElementById("butoon1");
+    butoon.addEventListener("click", ingresoUsuarios)
+    let butoon2 = document.getElementById("butoon2");
+    butoon2.addEventListener("click", elimiarUsuarios)
 }
 
-function calcular (){
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1);
+  }
 
-    let monto = document.getElementById("inputMonto").value;
-    let cuota = document.getElementById("inputCuota").value;
-    let banco = document.getElementById("inputBanco").value;
+function clearcontent(id) {
+    document.getElementById(id).innerHTML = "";
+}
 
-    let interes = ""
+const usuarios = []
 
-    if(banco != "Banco Macro"){
-        if(banco != "Banco Citibank"){
-            if(parseInt(cuota) > 12){
-                if(parseInt(cuota) > 24){
-                    if(parseInt(cuota) > 36){
-                        interes = monto * (47/100);
-                    }else{
-                        interes = monto * (36/100);
-                    }
-                }else{
-                    interes = monto * (25/100);
-                }
-            }else{
-                interes = monto * (14/100);
-            }
-        }else{
-            if(parseInt(cuota) > 12){
-                if(parseInt(cuota) > 24){
-                    if(parseInt(cuota) > 36){
-                        interes = monto * (42/100);
-                    }else{
-                        interes = monto * (32/100);
-                    }
-                }else{
-                    interes = monto * (22/100);
-                }
-            }else{
-                interes = monto * (12/100);
-            }
+let cantidad = 3
+
+function ingresoUsuarios(){
+    class User{
+        constructor(sexo,nombre,direccion,monto,financiado){
+          this.sexo = sexo;
+          this.nombre = nombre;
+          this.direccion = direccion;
+          this.monto = monto;
+          this.financiado = financiado;
         }
-    }else{
-        if(parseInt(cuota) > 12){
-            if(parseInt(cuota) > 24){
-                if(parseInt(cuota) > 36){
-                    interes = monto * (40/100);
-                }else{
-                    interes = monto * (30/100);
-                }
-            }else{
-                interes = monto * (20/100);
-            }
-        }else{
-            interes = monto * (10/100);
+        pagrarCuota(){
+          this.financiado = this.financiado - 1;
         }
-    }
-
-    let cuotas = "";
-
-    for(let i = 1; i <= cuota; i++){
-        cuotas += `<p> ${i}: $${division(suma(parseInt(monto), interes),cuota).toFixed(2)}</p>`;
     };
-
-    document.getElementById("contentCuotas").innerHTML = cuotas
-    document.getElementById("montoTotal").innerHTML = `Monto total: $${parseInt(monto)+interes}`
-}; */
-
-
-// Este de abajo seria un ejemplo de uso de las funciones fecha pero sin interaccion con el HTML
     
-/*     const suma = (a,b) => a + b;
-    const division = (a,b) => a / b;
+    if(usuarios.length == cantidad){
+            alert(`Ya existen la cantidad maxima de usuarios\nElimine un usuario para crear uno nuevo`)
+            return}
 
-    let monto = parseInt(prompt("Monto"));
-    let cuotas = parseInt(prompt("Cuota"));
-    let banco = parseInt(prompt("🏦 Ingresa la Entidad Bancaria."+"\n"+"1. Banco Macro - 10% Interes"+"\n"+"2 Banco Citibank - 20% Interes"+"\n"+"3 Banco Santander - 30% Interes"));
-        
-    if(banco != "1"){
-        if(banco != "2"){
-            banco = (30/100)
-        }else{
-            banco = (20/100)
+    while(usuarios.length != cantidad){
+
+        let varon = document.createElement('img')
+        varon.src = '../../assets/hombre.png'
+        let mujer = document.createElement('img')
+        mujer.src = '../../assets/mujer.png'
+
+        let genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero:\nM - Masculino\nF - Femenino`)
+
+
+        while((genero.toLowerCase() != "m") && (genero.toLowerCase() != "f")){
+            alert(`No se ingreso correctamente el Genero del Usuario`)
+            genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero (M o F):\nM - Masculino\nF - Femenino`)
         }
-    }else{
-        banco = (10/100)
+
+        usuarios.push (new User(
+            genero,
+            prompt(`Usuario ${usuarios.length + 1} \nIngrese Nombre:`), 
+            prompt(`Usuario ${usuarios.length + 1} \nIngrese Direccion:`), 
+            parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Monto Limite:`)),
+            parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Cuotas Limite:`))
+        ));
+
+        if(genero.toLowerCase() === "m" ){
+            document.getElementById(`imagen${usuarios.length}`).appendChild(varon)
+        }else{
+            document.getElementById(`imagen${usuarios.length}`).appendChild(mujer)
+        }
+
+        document.getElementById(`nombre${usuarios.length}`).innerHTML = capitalize(usuarios[usuarios.length - 1].nombre)
+        document.getElementById(`direccion${usuarios.length}`).innerHTML = capitalize(usuarios[usuarios.length - 1].direccion)
+        document.getElementById(`monto${usuarios.length}`).innerHTML = `$${usuarios[usuarios.length - 1].monto}`
+        document.getElementById(`financiado${usuarios.length}`).innerHTML = `Hasta: ${usuarios[usuarios.length - 1].financiado} Cuotas`
+
+        let otro = confirm(`Desea Crear otro Usuario.?`)
+        
+        if(otro == false){
+            alert(`${usuarios.length} Usiario Creado`)
+            return
+        }else if(usuarios.length == cantidad){
+            alert(`Ya existen la cantidad maxima de usuarios\nElimine un usuario para crear uno nuevo`)
+            return
+        }
     }
+}
 
-    let valorCuota = "";
+function elimiarUsuarios(){
 
-    for(let i = 1; i <= cuotas; i++){
-        valorCuota += `${i}: $${division(suma(parseInt(monto), monto * banco),cuotas).toFixed(2)} \n`;
-    };
+    let elimina = confirm(`Desea eliminar un usuario.?`)
 
-    let montoTotal = suma(parseInt(monto),monto * banco)
+    if(elimina == false){
+        alert(`No se eliminó ningun usuario`)
+        return
+    }else if(usuarios.length == 0){
+        alert(`No hay Usuarios Ingresados\nPara eliminar Usuarios primero ahi que crearlos`)
+        return
+    }else{
 
-  
-    alert(`Cuotas:\n\n${valorCuota}\nTotal Prestamo $: ${montoTotal}`); */
+        let name = []
+        let userName = ""
+
+        for(const item of usuarios){
+            name.push (item.nombre)
+            userName += capitalize(item.nombre)+"\n"
+        }
+
+        let userDelet = prompt(`Ingrese el Nombre del Usuario a eliminar\n${userName}`)
+
+        if(name.includes(userDelet.toLowerCase()) == false){
+            alert(`El Nombre de Usuario ingresado no existe`)
+        return
+        }else{
+            let confirmacion = confirm(`Confirma que desea ELIMINAR al Usuario "${capitalize(userDelet)}"`)
+
+            if(confirmacion == false){
+                alert(`No se eliminó ningun usuario`)
+                return
+            }else{
+                let indice = name.indexOf(userDelet)
+                usuarios.splice(indice,1)
+            }
+
+            console.log(usuarios);
+
+            for(let i = 1; i <= 3; i++){
+                clearcontent(`imagen${i}`)
+                clearcontent(`nombre${i}`)
+                clearcontent(`direccion${i}`)
+                clearcontent(`monto${i}`)
+                clearcontent(`financiado${i}`)
+            }
+
+            let varon = document.createElement('img')
+            varon.src = '../../assets/hombre.png'
+            let mujer = document.createElement('img')
+            mujer.src = '../../assets/mujer.png'
+
+            for(let g = 1 ; g <= usuarios.length; g++){
+                if(usuarios[g - 1].sexo === "m"){
+                    document.getElementById(`imagen${g}`).appendChild(varon)
+                }else{
+                    document.getElementById(`imagen${g}`).appendChild(mujer)
+                }
+                document.getElementById(`nombre${g}`).innerHTML = capitalize(usuarios[g - 1].nombre)
+                document.getElementById(`direccion${g}`).innerHTML = capitalize(usuarios[g - 1].direccion)
+                document.getElementById(`monto${g}`).innerHTML = `$${usuarios[g - 1].monto}`
+                document.getElementById(`financiado${g}`).innerHTML = `Hasta: ${usuarios[g - 1].financiado} Cuotas`
+            }
+        }
+    }
+}
+
+/*   console.log(prestamo1);
+  alert(`Se creo el Prestamo: ${prestamo1.nombre}\nPor un monto de $${prestamo1.monto}\na pagar en ${prestamo1.cuota} cuotas`);
+
+  let pagar = confirm("Quiere Realizar el pago de una cuota.?");
+  if(pagar === true){
+    prestamo1.pagrarCuota();
+    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
+  }else{
+    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
+  }; */

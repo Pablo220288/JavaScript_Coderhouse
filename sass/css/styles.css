@@ -59,6 +59,7 @@ body main .contenPrestamo .user .usuarios, body main .contenPrestamo .cantCoutas
   align-items: center;
 }
 body main .contenPrestamo .user .usuarios > p, body main .contenPrestamo .cantCoutas .usuarios > p, body main .contenPrestamo .calculador .usuarios > p {
+  font-size: 0.9rem;
   align-self: start;
   text-decoration: underline;
 }
@@ -67,11 +68,11 @@ body main .contenPrestamo .user .usuarios .contenUsuario, body main .contenPrest
   justify-content: center;
   align-items: center;
 }
-body main .contenPrestamo .user .usuarios .contenUsuario .imagen, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen {
+body main .contenPrestamo .user .usuarios .contenUsuario .imagen1, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen1, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen1, body main .contenPrestamo .user .usuarios .contenUsuario .imagen2, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen2, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen2, body main .contenPrestamo .user .usuarios .contenUsuario .imagen3, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen3, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen3 {
   width: 50px;
   height: 50px;
 }
-body main .contenPrestamo .user .usuarios .contenUsuario .imagen img, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen img, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen img {
+body main .contenPrestamo .user .usuarios .contenUsuario .imagen1 img, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen1 img, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen1 img, body main .contenPrestamo .user .usuarios .contenUsuario .imagen2 img, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen2 img, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen2 img, body main .contenPrestamo .user .usuarios .contenUsuario .imagen3 img, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .imagen3 img, body main .contenPrestamo .calculador .usuarios .contenUsuario .imagen3 img {
   width: 100%;
 }
 body main .contenPrestamo .user .usuarios .contenUsuario .caracteristicas, body main .contenPrestamo .cantCoutas .usuarios .contenUsuario .caracteristicas, body main .contenPrestamo .calculador .usuarios .contenUsuario .caracteristicas {
@@ -137,6 +138,7 @@ body main .contenPrestamo .calculador .butoon {
   font-size: 15px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
   transition: all 500ms ease;
+  cursor: pointer;
 }
 body main .contenPrestamo .calculador .butoon:hover {
   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3019607843);

@@ -60,6 +60,7 @@ body{
                     flex-direction: column;
                     align-items: center;
                     > p{
+                        font-size: 0.9rem;
                         align-self: start;
                         text-decoration:underline;
                     }
@@ -67,7 +68,7 @@ body{
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        .imagen{
+                        .imagen1, .imagen2, .imagen3{
                             width: 50px;
                             height: 50px;
                             img{
@@ -97,7 +98,8 @@ body{
                         }
                         
                     }
-                 }
+                }
+
             }
             .calculador{
                 @extend .user;
@@ -145,10 +147,12 @@ body{
                     font-size: 15px;
                     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
                     transition: all 500ms ease;
+                    cursor: pointer;
                     &:hover{
                         box-shadow: 0 0 20px 0 #ffffff4d;
                     }  
                 }
+
             }
             .cantCoutas{
                 @extend .user;
