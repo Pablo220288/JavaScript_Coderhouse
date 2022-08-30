@@ -42,9 +42,9 @@ function ingresoUsuarios(){
     while(usuarios.length != cantidad){
 
         let varon = document.createElement('img')
-        varon.src = '../../assets/hombre.png'
+        varon.src = 'assets/hombre.png'
         let mujer = document.createElement('img')
-        mujer.src = '../../assets/mujer.png'
+        mujer.src = 'assets/mujer.png'
 
         let genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero:\nM - Masculino\nF - Femenino`)
 
