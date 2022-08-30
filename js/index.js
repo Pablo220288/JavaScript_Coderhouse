@@ -1,4 +1,4 @@
-// A
+// Gestion de Usuarios
 
 window.onload = iniciar;
 
@@ -150,14 +150,3 @@ function elimiarUsuarios(){
         }
     }
 }
-
-/*   console.log(prestamo1);
-  alert(`Se creo el Prestamo: ${prestamo1.nombre}\nPor un monto de $${prestamo1.monto}\na pagar en ${prestamo1.cuota} cuotas`);
-
-  let pagar = confirm("Quiere Realizar el pago de una cuota.?");
-  if(pagar === true){
-    prestamo1.pagrarCuota();
-    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
-  }else{
-    alert(`Restan por pagar ${prestamo1.cuota} cuotas.`);
-  }; */

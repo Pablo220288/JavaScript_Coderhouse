@@ -10,9 +10,11 @@ $white: #ffffff;
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     overflow-x: hidden;
 }
+
 body{
     width: 100%;
     height: 100vh;
@@ -81,7 +83,6 @@ body{
                             align-items: flex-end;
                             justify-content: center;
                             margin-left: 10px;
-
                             p{
                                 font-size: 0.8rem;
                             }
@@ -99,7 +100,6 @@ body{
                         
                     }
                 }
-
             }
             .calculador{
                 @extend .user;
@@ -152,7 +152,6 @@ body{
                         box-shadow: 0 0 20px 0 #ffffff4d;
                     }  
                 }
-
             }
             .cantCoutas{
                 @extend .user;
@@ -177,7 +176,6 @@ body{
                     p{
                         margin-left: 2px;
                     }
-    
                 }
                 #montoTotal{
                     width: 100%;
@@ -206,6 +204,7 @@ body{
         }
     }
 }
+
 @media only screen and (max-width:1080px){
     body{
         height: auto;
@@ -213,5 +212,4 @@ body{
             margin-bottom: 50px;
         }
     }
-    
  }
