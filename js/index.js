@@ -9,17 +9,22 @@ function iniciar(){
     butoon2.addEventListener("click", elimiarUsuarios)
 }
 
+// Funcion para poner primera letra en Mayusculas a fin de respetar lo Nombres
 function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1);
 }
-
+// Funcion para limpiar el Html
 function clearcontent(id) {
     document.getElementById(id).innerHTML = "";
 }
 
+//Array de usuarios y Variable con Cantidad de usuarios
+
 const usuarios = []
 
 let cantidad = 3
+
+//Funcion de Ingreso de Usuarios
 
 function ingresoUsuarios(){
     class User{
@@ -39,6 +44,8 @@ function ingresoUsuarios(){
             alert(`Ya existen la cantidad maxima de usuarios\nElimine un usuario para crear uno nuevo`)
             return}
 
+// Bucle para crear Usuarios
+
     while(usuarios.length != cantidad){
 
         let varon = document.createElement('img')
@@ -53,15 +60,45 @@ function ingresoUsuarios(){
             genero = prompt(`Usuario ${usuarios.length + 1}\nIngrese Genero (M o F):\nM - Masculino\nF - Femenino`)
         }
 
+        let nombrePush = prompt(`Usuario ${usuarios.length + 1} \nIngrese Nombre:`)
+
+        while(nombrePush === ""){
+            alert(`Debes Ingresar algun Nombre`)
+            nombrePush = prompt(`Usuario ${usuarios.length + 1} \nIngrese Nombre:`)
+        }
+
+        let direccionPush = prompt(`Usuario ${usuarios.length + 1} \nIngrese Direccion:`)
+
+        while(direccionPush === ""){
+            alert(`Debes Ingresar alguna Direccion`)
+            direccionPush = prompt(`Usuario ${usuarios.length + 1} \nIngrese Direccion:`)
+        }
+
+        let montoPush = parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Monto Limite:`))
+
+        while(/\D/.test(montoPush)){
+            alert(`Debes Ingresar algun Monto`)
+            montoPush = parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Monto Limite:`))
+        }
+
+        let cuotaPush = parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Cuotas Limite:`))
+
+        while(/\D/.test(cuotaPush)){
+            alert(`Debes Ingresar un numero de cuota`)
+            cuotaPush = parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Cuotas Limite:`))
+        }
+// Subiendo usuarios al Array
         usuarios.push (new User(
             genero,
-            prompt(`Usuario ${usuarios.length + 1} \nIngrese Nombre:`), 
-            prompt(`Usuario ${usuarios.length + 1} \nIngrese Direccion:`), 
-            parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Monto Limite:`)),
-            parseInt(prompt(`Usuario ${usuarios.length + 1} \nIngrese Cuotas Limite:`))
+            nombrePush, 
+            direccionPush, 
+            montoPush,
+            cuotaPush
         ));
 
-        if(usuarios[usuarios.length - 1].sexo === "m" ){
+//Cargando Usuarios al HTML
+
+        if(usuarios[usuarios.length - 1].sexo === "m"){
             document.getElementById(`imagen${usuarios.length}`).appendChild(varon)
         }else{
             document.getElementById(`imagen${usuarios.length}`).appendChild(mujer)
@@ -75,7 +112,7 @@ function ingresoUsuarios(){
         let otro = confirm(`Desea Crear otro Usuario.?`)
         
         if(otro == false){
-            alert(`${usuarios.length} Usiario Creado`)
+            alert(`${usuarios.length} Usuarios Creados`)
             return
         }else if(usuarios.length == cantidad){
             alert(`Ya existen la cantidad maxima de usuarios\nElimine un usuario para crear uno nuevo`)
@@ -83,6 +120,8 @@ function ingresoUsuarios(){
         }
     }
 }
+
+//Funcion para elimiar Usuarios
 
 function elimiarUsuarios(){
 
@@ -106,7 +145,9 @@ function elimiarUsuarios(){
 
         let userDelet = prompt(`Ingrese el Nombre del Usuario a eliminar\n${userName}`)
 
-        if(name.includes(userDelet.toLowerCase()) == false){
+// Detectamos si en Usuario Ingresado existe en el array Usuarios
+
+        if(usuarios.some(el => el.nombre === userDelet) == false){
             alert(`El Nombre de Usuario ingresado no existe`)
         return
         }else{
@@ -116,11 +157,11 @@ function elimiarUsuarios(){
                 alert(`No se eliminó ningun usuario`)
                 return
             }else{
-                let indice = name.indexOf(userDelet)
-                usuarios.splice(indice,1)
+                //Detectamos en Indici del Usuario y lo eliminamos
+                usuarios.splice(usuarios.findIndex(em => em.nombre === userDelet),1)
             }
 
-            console.log(usuarios);
+            //Limpiamos el HTML
 
             for(let i = 1; i <= 3; i++){
                 clearcontent(`imagen${i}`)
@@ -134,6 +175,8 @@ function elimiarUsuarios(){
             varon.src = 'assets/hombre.png'
             let mujer = document.createElement('img')
             mujer.src = 'assets/mujer.png'
+
+//Volvemos a Cargar el HTML con los usuarios que quedaron en el Array
 
             for(let g = 1 ; g <= usuarios.length; g++){
                 if(usuarios[g - 1].sexo === "m"){
